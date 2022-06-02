@@ -36,11 +36,11 @@ def generate(context, level, ratio):
     if context.active_object is None:
         return
 
-    objectName = context.object.name
+    object_name = context.object.name
 
     bpy.ops.object.duplicate()
 
-    context.object.name = objectName + "_lod" + str(level)
+    context.object.name = object_name + "_lod" + str(level)
 
     bpy.ops.object.modifier_add(type='DECIMATE')
     context.object.modifiers["Decimate"].ratio = ratio
